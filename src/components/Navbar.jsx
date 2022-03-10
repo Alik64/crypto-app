@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom'
 import { Button, Menu, Typography, Avatar } from 'antd'
 import { HomeOutlined, MoneyCollectOutlined, BulbOutlined, FundOutlined, MenuOutlined } from '@ant-design/icons'
 
-import icon from '../assets/images/cryptocurrency.png'
+import icon from '../assets/images/cw.png'
 
 const Navbar = () => {
     return (
-        <nav className="nav-container">
+        <div className="nav-container">
             <div className="logo-container">
                 <Avatar src={icon} size='large' />
                 <Typography.Title level={2} className='logo'>
@@ -16,7 +16,7 @@ const Navbar = () => {
                 </Typography.Title>
 
             </div>
-            <Menu theme=''>
+            <Menu theme='dark'>
                 <Menu.Item icon={<HomeOutlined />}>
                     <Link to='/'>Home</Link>
                 </Menu.Item>
@@ -32,7 +32,7 @@ const Navbar = () => {
             </Menu>
 
 
-        </nav>
+        </div>
     )
 }
 
