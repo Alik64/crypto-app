@@ -1,24 +1,27 @@
 import React, { useState } from 'react';
-import HTMLReactParser from 'html-react-parser';
 import { useParams } from 'react-router-dom';
-import millify from 'millify';
-import { Col, Row, Typography, Select } from 'antd';
-import { MoneyCollectOutlined, DollarCircleOutlined, FundOutlined, ExclamationCircleOutlined, StopOutlined, TrophyOutlined, CheckOutlined, NumberOutlined, ThunderboltOutlined } from '@ant-design/icons';
-import { useGetCryptoDetailsQuery, useGetCryptoHistoryQuery } from '../services/cryptoApi'
+
 import { v4 as uuidv4 } from 'uuid'
+import millify from 'millify';
+import HTMLReactParser from 'html-react-parser';
+
 import LineChart from './LineChart';
+import { useGetCryptoDetailsQuery, useGetCryptoHistoryQuery } from '../services/cryptoApi'
+
+import { MoneyCollectOutlined, DollarCircleOutlined, FundOutlined, ExclamationCircleOutlined, StopOutlined, TrophyOutlined, CheckOutlined, NumberOutlined, ThunderboltOutlined } from '@ant-design/icons';
+import { Col, Row, Typography, Select } from 'antd';
 const { Title, Text } = Typography;
 const { Option } = Select;
 
 
-
-
 const CryptoDetails = () => {
     const { coinId } = useParams();
+
     const [timePeriod, setTimePeriod] = useState('7d')
+
     const { data, isFetching } = useGetCryptoDetailsQuery(coinId)
     const { data: coinHistory } = useGetCryptoHistoryQuery({ coinId, timePeriod });
-    console.log(coinHistory)
+
     const cryptoDetails = data?.data?.coin;
 
     const time = ['3h', '24h', '7d', '30d', '1y', '3m', '3y', '5y'];
@@ -40,8 +43,6 @@ const CryptoDetails = () => {
     ];
 
 
-
-
     if (isFetching) return 'Loading...';
 
     return (
@@ -49,7 +50,6 @@ const CryptoDetails = () => {
             <Col className="coin-heading-container">
                 <Title level={2} className="coin-name">{cryptoDetails.name} ({cryptoDetails.symbol}) Price</Title>
                 <p>{cryptoDetails.name} live price in US Dollar (USD). View value statistics, market cap and supply.</p>
-
             </Col>
             <Select defaultValue="7d" className="select-timeperiod" placeholder="Select Timeperiod"
                 onChange={(value) => setTimePeriod(value)}>

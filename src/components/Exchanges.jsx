@@ -1,8 +1,7 @@
 import React from 'react'
 import progress from '../assets/images/progress.gif'
+
 import { Typography, Avatar } from 'antd'
-
-
 const { Title } = Typography
 
 const Exchanges = () => {
