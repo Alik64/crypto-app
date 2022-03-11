@@ -12,7 +12,6 @@ import { Select, Typography, Row, Col, Avatar, Card } from 'antd'
 const { Text, Title } = Typography;
 const { Option } = Select
 
-
 const News = ({ simplified }) => {
     const [newsCategory, setNewsCategory] = useState('Cryptocurrency');
     const { data } = useGetCryptosQuery(100);
@@ -62,3 +61,5 @@ const News = ({ simplified }) => {
 };
 
 export default News
+
+
