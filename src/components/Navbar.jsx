@@ -28,6 +28,9 @@ const Navbar = () => {
         }
     }, [screenSize]);
 
+    const handleMenu = () => {
+
+    }
     return (
         <div className="nav-container">
             <div className="logo-container">
@@ -41,16 +44,16 @@ const Navbar = () => {
                     defaultSelectedKeys={['1']}
                 >
                     <Menu.Item key='1' icon={<HomeOutlined />}>
-                        <Link to="/">Home</Link>
+                        <Link to="/" onClick={() => setActiveMenu(!activeMenu)}>Home</Link>
                     </Menu.Item>
                     <Menu.Item key='2' icon={<FundOutlined />}>
-                        <Link to="/cryptos">Cryptos</Link>
+                        <Link to="/cryptos" onClick={() => setActiveMenu(!activeMenu)}>Cryptos</Link>
                     </Menu.Item>
                     <Menu.Item key='3' icon={<MoneyCollectOutlined />}>
-                        <Link to="/exchanges">Exchanges</Link>
+                        <Link to="/exchanges" onClick={() => setActiveMenu(!activeMenu)}>Exchanges</Link>
                     </Menu.Item>
                     <Menu.Item key='4' icon={<BulbOutlined />}>
-                        <Link to="/news">News</Link>
+                        <Link to="/news" onClick={() => setActiveMenu(!activeMenu)}>News</Link>
                     </Menu.Item>
                 </Menu>
             )}
