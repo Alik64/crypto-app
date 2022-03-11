@@ -3,6 +3,7 @@ import millify from 'millify'
 import { Link } from 'react-router-dom'
 import { Card, Row, Col, Input } from 'antd'
 import { useGetCryptosQuery } from '../services/cryptoApi'
+import Preloader from './Preloader'
 
 const Cryptos = ({ simplified }) => {
     const count = simplified ? 10 : 100
@@ -24,7 +25,7 @@ const Cryptos = ({ simplified }) => {
 
 
 
-    if (isFetching) return 'Loading ...'
+    if (isFetching) return <Preloader />
     return (
         <>
             {!simplified && (

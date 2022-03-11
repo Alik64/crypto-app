@@ -4,6 +4,7 @@ import { useGetCryptoNewsQuery } from '../services/cryptoNewsApi'
 import newsIcon from '../assets/images/news.png'
 import { Select, Typography, Row, Col, Avatar, Card } from 'antd'
 import { useGetCryptosQuery } from '../services/cryptoApi';
+import Preloader from './Preloader'
 const demoImage = 'https://www.bing.com/th?id=OVFT.mpzuVZnv8dwIMRfQGPbOPC&pid=News';
 const { Text, Title } = Typography;
 const { Option } = Select
@@ -15,7 +16,7 @@ const News = ({ simplified }) => {
 
     console.log(cryptoNews)
 
-    if (!cryptoNews?.value) return 'Loading...'
+    if (!cryptoNews?.value) return <Preloader />
 
     return (
         <Row gutter={[24, 24]}>
@@ -40,7 +41,7 @@ const News = ({ simplified }) => {
                         <a href={news.url} target="_blank" rel="noreferrer">
                             <div className="news-image-container">
                                 <Title className="news-title" level={4}>{news.name}</Title>
-                                <img src={news?.image?.thumbnail?.contentUrl || newsIcon} alt="news" style={{ maxWidth: '150px', maxHeight: '100px' }} />
+                                <Avatar size={100} src={news?.image?.thumbnail?.contentUrl || newsIcon} alt="news" />
                             </div>
                             <p>{news.description.length > 100 ? `${news.description.substring(0, 100)}...` : news.description}</p>
                             <div className="provider-container">
