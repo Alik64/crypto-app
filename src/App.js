@@ -22,7 +22,7 @@ const App = () => {
                             <Route path='exchanges' element={<Exchanges />} />
                             <Route path='cryptos' element={<Cryptos />} />
                             <Route path='crypto/:coinId' element={<CryptoDetails />} />
-                            <Route path='/news' element={<News />} />
+                            <Route path='news' element={<News />} />
                         </Routes>
                     </div>
                 </Layout>
