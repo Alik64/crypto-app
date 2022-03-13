@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 :root {
   --text-primary: #000;
   --bgPrimary: #fff;
@@ -10,6 +17,7 @@
 * {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -18,22 +26,37 @@ a:hover {
 }
 
 .app {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   overflow: hidden;
 }
 
 .navbar {
+  -webkit-box-flex: 0.2;
+  -ms-flex: 0.2;
   flex: 0.2;
   background-color: rgb(0, 21, 41);
 }
 .exchange {
   height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 .main {
+  -webkit-box-flex: 0.8;
+  -ms-flex: 0.8;
   flex: 0.8;
   width: 100%;
 }
@@ -51,8 +74,12 @@ a:hover {
 
 .logo-container {
   background-color: #001529;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: 20px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   width: 100%;
 }
@@ -74,8 +101,14 @@ a:hover {
 
 .loader {
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 /* 
@@ -99,15 +132,22 @@ a:hover {
 
 @media screen and (max-width: 800px) {
   .app {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     overflow: hidden;
   }
 
   .navbar {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
     flex: 1;
   }
 
   .main {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
     flex: 1;
     margin-top: 90px;
     margin-left: 0px;
@@ -143,9 +183,18 @@ a:hover {
 }
 
 .coin-heading-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   border-bottom: 1px solid var(--border);
   padding-top: 20px;
@@ -165,8 +214,13 @@ a:hover {
 }
 
 .stats-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: distribute;
   justify-content: space-around;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: 40px;
 }
@@ -185,7 +239,11 @@ a:hover {
 }
 
 .coin-stats {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   border-bottom: 1px solid var(--border);
   font-size: 1rem;
@@ -194,6 +252,8 @@ a:hover {
 }
 
 .coin-stats-name {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 10px;
   font-size: 1rem;
@@ -209,6 +269,8 @@ a:hover {
 }
 
 .coin-desc-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 40px;
   margin-top: 40px;
@@ -234,17 +296,27 @@ a:hover {
 }
 
 .coin-desc {
+  -webkit-box-flex: 0.5;
+  -ms-flex: 0.5;
   flex: 0.5;
 }
 
 .coin-links {
   padding: 0px 20px;
+  -webkit-box-flex: 0.5;
+  -ms-flex: 0.5;
   flex: 0.5;
 }
 
 .coin-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   border-bottom: 1px solid var(--border);
   padding: 20px;
@@ -268,9 +340,15 @@ a:hover {
 
 @media screen and (max-width: 1000px) {
   .stats-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
   }
   .coin-desc-link {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
   }
   .stats-container h2 {
@@ -299,7 +377,11 @@ a:hover {
   min-height: 300px !important;
 }
 .news-image-container {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
   display: flex !important;
+  -webkit-box-pack: justify !important;
+  -ms-flex-pack: justify !important;
   justify-content: space-between !important;
 }
 .news-title {
@@ -315,7 +397,11 @@ a:hover {
   margin: 10px 0px !important;
 }
 .provider-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 .provider-name {
@@ -323,7 +409,11 @@ a:hover {
 }
 
 .chart-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   gap: 50px;
   color: #0071bd;
@@ -332,9 +422,14 @@ a:hover {
   color: #0071bd !important;
 }
 .price-container {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
   display: flex !important;
   gap: 20px !important;
+  -webkit-box-align: center !important;
+  -ms-flex-align: center !important;
   align-items: center !important;
+  -ms-flex-wrap: wrap !important;
   flex-wrap: wrap !important;
 }
 .price-change {
@@ -345,8 +440,14 @@ a:hover {
   font-weight: 900 !important;
 }
 .home-heading-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   margin-top: 40px;
 }
@@ -376,8 +477,15 @@ a:hover {
 
 .footer {
   background-color: #001529;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   padding: 20px 0;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }

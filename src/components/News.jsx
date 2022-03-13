@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import moment from 'moment'
 import { v4 as uuidv4 } from 'uuid'
 
@@ -19,6 +19,8 @@ const News = ({ simplified }) => {
 
     if (!cryptoNews?.value) return <Preloader />
 
+
+
     return (
         <Row gutter={[24, 24]}>
             {!simplified && (
@@ -28,10 +30,11 @@ const News = ({ simplified }) => {
                         className="select-news"
                         placeholder="Select a Crypto"
                         optionFilterProp="children"
+                        defaultValue={['Cryptocurency']}
                         onChange={(value) => setNewsCategory(value)}
                         filterOption={(input, option) => option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
                     >
-                        <Option value="Cryptocurency">Cryptocurrency</Option>
+
                         {data?.data?.coins?.map((coin) => <Option key={coin.uuid} value={coin.name}>{coin.name}</Option>)}
                     </Select>
                 </Col>
