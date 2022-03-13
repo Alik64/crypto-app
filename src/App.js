@@ -31,7 +31,7 @@ const App = () => {
                     <Typography.Paragraph style={{ color: '#fff', textAlign: 'center' }}>
                         Crypto Info <br />
                         2022 React is fun :) <br />
-                        created by <a href="https://www.linkedin.com/in/albert-barsamov-2009041a0/" target="_blank">Albert</a>
+                        created by <a href="https://www.linkedin.com/in/albert-barsamov-2009041a0/" target="_blank" rel='noreferrer'>Albert</a>
                     </Typography.Paragraph>
                     <Space>
                         <Link to='/'> Home</Link>

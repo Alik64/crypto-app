@@ -10,6 +10,7 @@ import { useGetCryptoDetailsQuery, useGetCryptoHistoryQuery } from '../services/
 
 import { MoneyCollectOutlined, DollarCircleOutlined, FundOutlined, ExclamationCircleOutlined, StopOutlined, TrophyOutlined, CheckOutlined, NumberOutlined, ThunderboltOutlined } from '@ant-design/icons';
 import { Col, Row, Typography, Select } from 'antd';
+import Preloader from './Preloader';
 const { Title, Text } = Typography;
 const { Option } = Select;
 
@@ -43,7 +44,7 @@ const CryptoDetails = () => {
     ];
 
 
-    if (isFetching) return 'Loading...';
+    if (isFetching) return <Preloader />;
 
     return (
         <Col className="coin-detail-container">
