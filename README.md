@@ -6,6 +6,6 @@ Deployed on Netlify [Info-crypto](https://info-crypto.netlify.app/).
 
 ### Technologies
 
-React
-Redux Toolkit
-Ant Design
+- React
+- Redux Toolkit
+- Ant Design
