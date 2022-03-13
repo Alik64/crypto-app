@@ -29,31 +29,35 @@ const Navbar = () => {
     }, [screenSize]);
 
     const handleMenu = () => {
-
+        if (screenSize > 768) {
+            return setActiveMenu(true);
+        }
+        setActiveMenu(false)
     }
     return (
         <div className="nav-container">
             <div className="logo-container">
                 <Avatar src={icon} size="large" />
-                <h1 className="logo"><Link style={{ color: '#1890ff' }} to="/">Crypto Info</Link></h1>
+                <h1 className="logo"><Link style={{ color: '#1890ff' }} to="/">Info Crypto</Link></h1>
                 <Button className="menu-control-container" onClick={() => setActiveMenu(!activeMenu)}><MenuOutlined /></Button>
             </div>
             {activeMenu && (
                 <Menu
                     theme="dark"
                     defaultSelectedKeys={['1']}
+                    onClick={handleMenu}
                 >
                     <Menu.Item key='1' icon={<HomeOutlined />}>
-                        <Link to="/" onClick={() => setActiveMenu(!activeMenu)}>Home</Link>
+                        <Link to="/" >Home</Link>
                     </Menu.Item>
                     <Menu.Item key='2' icon={<FundOutlined />}>
-                        <Link to="/cryptos" onClick={() => setActiveMenu(!activeMenu)}>Cryptos</Link>
+                        <Link to="/cryptos">Cryptos</Link>
                     </Menu.Item>
                     <Menu.Item key='3' icon={<MoneyCollectOutlined />}>
-                        <Link to="/exchanges" onClick={() => setActiveMenu(!activeMenu)}>Exchanges</Link>
+                        <Link to="/exchanges" >Exchanges</Link>
                     </Menu.Item>
                     <Menu.Item key='4' icon={<BulbOutlined />}>
-                        <Link to="/news" onClick={() => setActiveMenu(!activeMenu)}>News</Link>
+                        <Link to="/news">News</Link>
                     </Menu.Item>
                 </Menu>
             )}
