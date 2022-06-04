@@ -20,7 +20,7 @@ blancs, dossiers de code source, sites internet, etc.
 
 ## 🎉 Résultats:
 
-Aujourd'hui le projet est toujours en cours de développement et amélioration.
+Aujourd'hui le projet est 💯 fonctionnel. Les mises à jours et diverses améliorations sont à venir.
 N'hésitez pas à le consulter et me retourner les éventuels bugs 🪲
 
 ### 💻 Environnement technique :
